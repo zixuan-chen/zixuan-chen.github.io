@@ -11,6 +11,7 @@ redirect_from:
 I'm a graduate student from [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). My research interest includes computer vision, machine learning, and reinforcement learning.
 I am very fortunate to be advised by [Prof. GaoYue](https://www.gaoyue.sjtu.edu.cn/) of RL2 Lab from [School of Computer Science](https://cs.sjtu.edu.cn/), Shanghai Jiao Tong University.
 
+I'm looking for a research internship as a research assistant!
 
 You can find my CV here: [Zixuan Chen's Curriculum Vitae](../assets/Curriculum_Vitae.pdf).
 

@@ -11,14 +11,15 @@ redirect_from:
 
 Education
 ======
-* B.S. in Shanghai, Shanghai Jiao Tong University, 2016
+* B.S. in Shanghai, Shanghai Jiao Tong University, 2016 
+  GPA 3.73/4.30
 * M.S. in Shanghai, Shanghai Jiao tong University, 2020
-* 
+  GPA 3.42/4.00
 
 Work experience
 ======
 * Summer 2019: Research Assistant
-  * Shanghai Jiao Tong University
+  * Shanghai Jiao Tong University, ThinkLab
   * Duties included: Graph Matching
   * Supervisor: Prof. Junchi Yan
   
@@ -26,10 +27,11 @@ Skills
 ======
 * Python/C++
 * Machine Learning
-  * Traditional Ma
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+  * Traditional Machine Learning
+  * Deep Learning: Resnet, Transformer
+  * Brain-like Self Supervised Learning: HTM
+* GIthub, Latex
+* English: Toefl(90) CET6(512)
 
 Publications
 ======
@@ -37,7 +39,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
@@ -48,7 +50,9 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+   -->
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+*  work a member of the Subject department in SJTU 2017-2018
+*  Served as a volunteer at the 2017 Shanghai Half Marathon
