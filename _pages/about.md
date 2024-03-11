@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a graduate student from [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). My research interest includes computer vision, machine learning, and reinforcement learning.
+I'm a graduate student from [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). My research interest include the the intersection of computational neuroscience and machine learning.
 I am very fortunate to be advised by [Prof. GaoYue](https://www.gaoyue.sjtu.edu.cn/) of RL2 Lab from [School of Computer Science](https://cs.sjtu.edu.cn/), Shanghai Jiao Tong University.
 
 I'm looking for a phd program!
