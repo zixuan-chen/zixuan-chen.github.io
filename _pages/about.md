@@ -8,12 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I'm a graduate student from [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). My research interest include the the intersection of computational neuroscience and machine learning.
-I am very fortunate to be advised by [Prof. GaoYue](https://www.gaoyue.sjtu.edu.cn/) of RL2 Lab from [School of Computer Science](https://cs.sjtu.edu.cn/), Shanghai Jiao Tong University.
-
-I'm looking for a phd program!
-
-At the same time, I am willing to participate in remote internship as a scientific research assistant during my application period!
+I'm a Phd student from [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). My research interest include embodied intelligence, causality and brain-like intelligence.
+I am very fortunate to be advised by [Prof. Yonglu-Li](https://dirtyharrylyl.github.io/) of [RHOS Lab](https://mvig-rhos.com/) from School of Computer Science, Shanghai Jiao Tong University.
 
 You can find my CV here: [Zixuan Chen's CV](../assets/CV.pdf).
 

@@ -15,6 +15,8 @@ Education
   GPA 3.73/4.30
 * M.S. in Shanghai, Shanghai Jiao tong University, 2020
   GPA 3.42/4.00
+* Phd. in Shanghai, Shanghai Jiao tong University, 2024
+
 
 Work experience
 ======
