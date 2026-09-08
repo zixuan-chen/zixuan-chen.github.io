@@ -16,8 +16,6 @@ I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. 
   
 * **Brain-like Intelligence:** Decoding the fundamental computational principles of the neocortex, seeking novel learning paradigms beyond Hebbian learning to simulate the biological essence of human cognition.
 
----
-
 ### 📢 News {#news}
 <div class="news-container">
   <ul>
@@ -31,8 +29,6 @@ I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. 
     </li>
   </ul>
 </div>
-
----
 
 ### 📝 Selected Publications {#publications}
 <div class="pub-note">(* equal contribution, # corresponding author)</div>
@@ -56,14 +52,10 @@ I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. 
   <a href="https://github.com/zhxieml/LNE_IMGM" class="btn-box"><span aria-hidden="true">💻</span> Code</a>
 </div>
 
----
-
 ### 🎓 Education {#education}
 * **Ph.D. Candidate** in Computer Science, Shanghai Jiao Tong University, 2024.09 - Present.
 * **M.S.** in Computer Science, Shanghai Jiao Tong University, 2020.09 - 2023.03.
 * **B.S.** in Computer Science (IEEE Honor Class), Shanghai Jiao Tong University, 2016.06 - 2020.04.
-
----
 
 ### 🏛️ Academic Services {#services}
 * **Conference Reviewer:** CVPR, NIPS.

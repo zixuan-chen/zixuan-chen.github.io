@@ -36,6 +36,20 @@ body {
 .page__content {
   --divider-color: #f2f3f3;
   --divider-color: color-mix(in srgb, var(--global-text-color) 12%, var(--global-bg-color));
+
+  /* Comfortable reading measure. The content column is ~840px wide, which put
+     body text at 100+ characters per line; 40rem lands at roughly 75-80. */
+  --measure: 40rem;
+}
+
+/* Keep running text on the measure while publication cards and the news list
+   stay full width. */
+.page__content p,
+.page__content > ul,
+.page__content > ol,
+.page__content > ul li,
+.page__content > ol li {
+  max-width: var(--measure);
 }
 
 .page__content h1,
@@ -46,8 +60,10 @@ body {
   font-weight: 600;
   border-bottom: 1.5px solid var(--divider-color);
   padding-bottom: 8px;
-  margin-top: 2.2em;
-  margin-bottom: 0.8em;
+  /* The <hr> separators between sections were removed, so headings carry the
+     separation themselves. */
+  margin-top: 3.2em;
+  margin-bottom: 1em;
   letter-spacing: -0.01em;
   color: inherit;
 }
@@ -86,22 +102,22 @@ body {
   line-height: 1.6;
 }
 
+/* Plain, muted date instead of a filled pill: the badge treatment gave the
+   least important information on the page the most visual weight. */
 .news-date {
   display: inline-block;
-  /* The theme's --global-thead-color is a near-white "table header" tone that
-     every dark theme also sets to near-white, so using it as a surface made the
-     pill white-on-white in dark mode. Derive the tint from the text colour
-     instead: it stays light on light backgrounds and dark on dark ones. */
-  background-color: rgba(128, 128, 128, 0.14);
-  background-color: color-mix(in srgb, var(--global-text-color) 10%, var(--global-bg-color));
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
-  font-size: 0.85em;
-  font-weight: 500;
-  margin-right: 18px;
-  min-width: 78px;
-  text-align: center;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: #7a8288;
+  color: color-mix(in srgb, var(--global-text-color) 55%, var(--global-bg-color));
+  margin-right: 20px;
+  min-width: 5.5em;
+  text-align: left;
   flex-shrink: 0;
 }
 
