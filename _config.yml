@@ -2,11 +2,24 @@ locale: "en-US"
 title: "Zixuan Chen's Homepage"
 title_separator: "-"
 name: "Zixuan Chen"
-description: "Zixuan Chen - Homepage"
-
+description: "Zixuan Chen is a Ph.D. candidate in computer science at Shanghai Jiao Tong University, working on embodied AI, causality, and video object segmentation."
+og_description: "Ph.D. candidate at Shanghai Jiao Tong University working on embodied AI, causality, and video object segmentation."
+og_image: "og-image.png"
 url: "https://zixuan-chen.github.io"
 baseurl: ""
 repository: "zixuan-chen/zixuan-chen.github.io"
+
+# Optional: enables twitter:site / twitter:creator meta tags (username without the @)
+# twitter:
+#   username: "your_handle"
+
+# Optional: enables the Person JSON-LD block in _includes/seo.html
+# social:
+#   type: Person
+#   name: Zixuan Chen
+#   links:
+#     - https://scholar.google.com/citations?user=cMiTyacAAAAJ
+#     - https://github.com/zixuan-chen
 
 author_profile: true
 
@@ -19,11 +32,15 @@ author:
   email: "m13953842591@sjtu.edu.cn"
   googlescholar: "https://scholar.google.com/citations?user=cMiTyacAAAAJ"
   github: "zixuan-chen"
+  # TODO: fill in your handles/IDs to show the matching icons in the sidebar
+  # twitter: "your_handle"
+  # linkedin: "your-id"
+  # orcid: "0000-0000-0000-0000"
+  # semantic: "your-semantic-scholar-id"
 
 include:
   - .htaccess
   - _pages
-  - files
 
 exclude:
   - "*.sublime-project"
@@ -40,6 +57,7 @@ exclude:
   - Capfile
   - config
   - Dockerfile
+  - files/README.md
   - Gemfile.lock
   - Gruntfile.js
   - gulpfile.js
@@ -93,7 +111,6 @@ permalink: /:categories/:title/
 timezone: Etc/UTC
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
