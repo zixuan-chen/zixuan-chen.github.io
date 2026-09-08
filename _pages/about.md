@@ -3,20 +3,31 @@ layout: single
 title: "About Me"
 permalink: /
 author_profile: true
+section_nav:
+  - title: "Research"
+    url: "#research-interests"
+  - title: "News"
+    url: "#news"
+  - title: "Publications"
+    url: "#publications"
+  - title: "Education"
+    url: "#education"
+  - title: "Services"
+    url: "#services"
 ---
 
 Hi! I am Zixuan Chen (陈子轩). I am a Ph.D. Candidate at School of Computer Science, [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). 
 
 I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. Yong-Lu Li](https://dirtyharrylyl.github.io/).
 
-### 🔬 Research Interests
+### Research Interests
 * **Embodied AI:** Pursuing human-centric General Intelligence by developing agents capable of profound 3D environmental understanding and authentic logical reasoning in complex physical worlds.
 
 * **Causality:** Scaling the Ladder of Causation by advancing Causal Discovery frameworks, with the goal of enabling agents to transcend statistical associations and master the transition from interventional interaction to counterfactual reasoning.
   
 * **Brain-like Intelligence:** Decoding the fundamental computational principles of the neocortex, seeking novel learning paradigms beyond Hebbian learning to simulate the biological essence of human cognition.
 
-### 📢 News {#news}
+### News {#news}
 <div class="news-container">
   <ul>
     <li>
@@ -30,7 +41,7 @@ I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. 
   </ul>
 </div>
 
-### 📝 Selected Publications {#publications}
+### Selected Publications {#publications}
 <div class="pub-note">(* equal contribution, # corresponding author)</div>
 
 <div class="pub-item">
@@ -52,10 +63,10 @@ I am currently a member of [RHOS Lab](https://mvig-rhos.com/) advised by [Prof. 
   <a href="https://github.com/zhxieml/LNE_IMGM" class="btn-box"><span aria-hidden="true">💻</span> Code</a>
 </div>
 
-### 🎓 Education {#education}
+### Education {#education}
 * **Ph.D. Candidate** in Computer Science, Shanghai Jiao Tong University, 2024.09 - Present.
 * **M.S.** in Computer Science, Shanghai Jiao Tong University, 2020.09 - 2023.03.
 * **B.S.** in Computer Science (IEEE Honor Class), Shanghai Jiao Tong University, 2016.06 - 2020.04.
 
-### 🏛️ Academic Services {#services}
+### Academic Services {#services}
 * **Conference Reviewer:** CVPR, NIPS.

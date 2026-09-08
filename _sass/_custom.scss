@@ -37,6 +37,11 @@ body {
   --divider-color: #f2f3f3;
   --divider-color: color-mix(in srgb, var(--global-text-color) 12%, var(--global-bg-color));
 
+  /* Accent used for section rules and publication venues. Falls back to the
+     theme primary, which is readable on both backgrounds. */
+  --accent-color: var(--global-base-color);
+  --accent-color: color-mix(in srgb, var(--global-base-color) 85%, var(--global-text-color));
+
   /* Comfortable reading measure. The content column is ~840px wide, which put
      body text at 100+ characters per line; 40rem lands at roughly 75-80. */
   --measure: 40rem;
@@ -58,7 +63,9 @@ body {
 .page__content h4 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 600;
-  border-bottom: 1.5px solid var(--divider-color);
+  /* Accent rule instead of a neutral hairline: ties the sections together and
+     gives the page a visual spine. */
+  border-bottom: 2px solid var(--accent-color);
   padding-bottom: 8px;
   /* The <hr> separators between sections were removed, so headings carry the
      separation themselves. */
@@ -66,10 +73,12 @@ body {
   margin-bottom: 1em;
   letter-spacing: -0.01em;
   color: inherit;
+  /* Keep anchored headings clear of the fixed masthead. */
+  scroll-margin-top: 5rem;
 }
 
 .page__content h3 {
-  font-size: 1.25em;
+  font-size: 1.4em;
 }
 
 .page__content h1 {
@@ -77,15 +86,26 @@ body {
   margin-top: 1em;
 }
 
+/* Slightly smaller page title so the jump from title to section heading is
+   less extreme. */
+.page__title {
+  font-size: 2em;
+}
+
 /* --------------------------------------------------------------------------
    3. News list
    -------------------------------------------------------------------------- */
 .news-container {
-  max-height: 260px;
-  overflow-y: auto;
   border: none;
   padding: 5px 0;
   margin-bottom: 40px;
+}
+
+/* Only scroll once the list is genuinely long. With a handful of entries the
+   fixed-height box left an empty scroll area. */
+.news-container:has(li:nth-child(5)) {
+  max-height: 260px;
+  overflow-y: auto;
 }
 
 .news-container ul {
@@ -164,7 +184,7 @@ body {
   font-style: italic;
   font-size: 0.95em;
   display: block;
-  color: color-mix(in srgb, var(--global-text-color) 75%, transparent);
+  color: var(--accent-color);
 }
 
 /* --------------------------------------------------------------------------
@@ -214,7 +234,46 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   7. Dark mode corrections
+   7. Section navigation
+   -------------------------------------------------------------------------- */
+.section-nav {
+  display: none; /* no room beside the content below 1200px */
+}
+
+@media screen and (min-width: 1200px) {
+  .section-nav {
+    display: block;
+    position: fixed;
+    top: 7rem;
+    left: calc(50% + 440px);
+    width: 150px;
+  }
+
+  .section-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .section-nav li {
+    margin-bottom: 0.65em;
+    font-size: 0.8em;
+    line-height: 1.35;
+  }
+
+  .section-nav a {
+    color: color-mix(in srgb, var(--global-text-color) 60%, var(--global-bg-color));
+    text-decoration: none;
+  }
+
+  .section-nav a:hover,
+  .section-nav a:focus {
+    color: var(--accent-color);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Dark mode corrections
    -------------------------------------------------------------------------- */
 /* <hr> uses --global-border-color, which the dark theme sets to #bdc1c4 — a
    light grey that is far brighter than the surrounding #474747 page. Use the
@@ -239,7 +298,7 @@ html[data-theme="dark"] {
 }
 
 /* --------------------------------------------------------------------------
-   8. Responsive + print
+   9. Responsive + print
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
   .news-container {
@@ -268,5 +327,27 @@ html[data-theme="dark"] {
 
   .btn-box {
     border-color: #999;
+  }
+
+  /* Drop page chrome so "Print to PDF" produces a clean document. */
+  .masthead,
+  .sidebar,
+  .section-nav,
+  .page__footer {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page__content p,
+  .page__content > ul,
+  .page__content > ol,
+  .page__content > ul li,
+  .page__content > ol li {
+    max-width: none; /* the printed page is already a narrow measure */
   }
 }
