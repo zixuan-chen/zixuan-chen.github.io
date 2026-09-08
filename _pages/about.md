@@ -3,17 +3,6 @@ layout: single
 title: "About Me"
 permalink: /
 author_profile: true
-section_nav:
-  - title: "Research"
-    url: "#research-interests"
-  - title: "News"
-    url: "#news"
-  - title: "Publications"
-    url: "#publications"
-  - title: "Education"
-    url: "#education"
-  - title: "Services"
-    url: "#services"
 ---
 
 Hi! I am Zixuan Chen (陈子轩). I am a Ph.D. Candidate at School of Computer Science, [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). 
