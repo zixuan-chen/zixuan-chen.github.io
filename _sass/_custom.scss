@@ -300,6 +300,23 @@ html[data-theme="dark"] {
   --accent-color: #4ab9d4;
 }
 
+/* The theme footer uses --global-text-color-light, which is #bdc1c4 in light
+   mode — only 1.63:1 on the #f2f3f3 footer, i.e. effectively unreadable. It is
+   fine in dark mode (8.37:1). Deriving the colour from the text colour at 80%
+   passes in both: 4.56:1 light, 6.65:1 dark. Footer links inherit this colour,
+   so they are covered too. */
+.page__footer {
+  color: #6b6f72;
+  color: color-mix(in srgb, var(--global-text-color) 80%, var(--global-footer-bg-color));
+}
+
+.page__footer .fas,
+.page__footer .fab,
+.page__footer .far,
+.page__footer .fal {
+  color: inherit;
+}
+
 /* --------------------------------------------------------------------------
    9. Responsive + print
    -------------------------------------------------------------------------- */
