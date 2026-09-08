@@ -37,10 +37,8 @@ body {
   --divider-color: #f2f3f3;
   --divider-color: color-mix(in srgb, var(--global-text-color) 12%, var(--global-bg-color));
 
-  /* Accent used for section rules and publication venues. Falls back to the
-     theme primary, which is readable on both backgrounds. */
-  --accent-color: var(--global-base-color);
-  --accent-color: color-mix(in srgb, var(--global-base-color) 85%, var(--global-text-color));
+  /* --accent-color is defined per theme in section 8, because it is also used
+     as text (publication venues) and must stay readable on both backgrounds. */
 
   /* Comfortable reading measure. The content column is ~840px wide, which put
      body text at 100+ characters per line; 40rem lands at roughly 75-80. */
@@ -284,17 +282,22 @@ hr {
 
 /* --global-link-color is #52adc8 (2.57:1 on white) in light mode and #0ea1c5
    (3.06:1 on #474747) in dark mode. Darken it slightly for light mode and
-   lighten it for dark mode so links reach at least ~4:1 against the page. */
+   lighten it for dark mode so links reach at least ~4:1 against the page.
+   The same brighter tone is used as the accent, because --accent-color is also
+   applied to publication venue text and must be readable as text in dark mode
+   (the theme base colour alone measures only 3.6:1 there). */
 :root {
   --global-link-color: #2f7f93;
   --global-link-color-hover: #2a7183;
   --global-link-color-visited: #4a9aa8;
+  --accent-color: #2f7f93;
 }
 
 html[data-theme="dark"] {
   --global-link-color: #4ab9d4;
   --global-link-color-hover: #63c6dd;
   --global-link-color-visited: #8fd6e6;
+  --accent-color: #4ab9d4;
 }
 
 /* --------------------------------------------------------------------------
