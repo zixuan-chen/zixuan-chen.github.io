@@ -113,8 +113,10 @@ body {
   font-size: 0.9em;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
-  color: #7a8288;
-  color: color-mix(in srgb, var(--global-text-color) 55%, var(--global-bg-color));
+  /* Muted, but not so faint it fails contrast: 4.65:1 in light mode and
+     6.46:1 in dark mode. The solid value is the no-color-mix fallback. */
+  color: #717578;
+  color: color-mix(in srgb, var(--global-text-color) 78%, var(--global-bg-color));
   margin-right: 20px;
   min-width: 5.5em;
   text-align: left;
