@@ -14,7 +14,8 @@
      4. Publication list
      5. Link buttons
      6. Screen-reader helper
-     7. Responsive + print
+     7. Dark mode corrections
+     8. Responsive + print
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -29,13 +30,21 @@ body {
 /* --------------------------------------------------------------------------
    2. Section headings
    -------------------------------------------------------------------------- */
+/* Divider tones derived from the text colour, so light and dark mode each get
+   an appropriately weighted line. The var() is declared twice on purpose: the
+   first (solid) value is the fallback for browsers without color-mix(). */
+.page__content {
+  --divider-color: #f2f3f3;
+  --divider-color: color-mix(in srgb, var(--global-text-color) 12%, var(--global-bg-color));
+}
+
 .page__content h1,
 .page__content h2,
 .page__content h3,
 .page__content h4 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 600;
-  border-bottom: 1.5px solid var(--global-border-color);
+  border-bottom: 1.5px solid var(--divider-color);
   padding-bottom: 8px;
   margin-top: 2.2em;
   margin-bottom: 0.8em;
@@ -79,7 +88,12 @@ body {
 
 .news-date {
   display: inline-block;
-  background-color: var(--global-thead-color);
+  /* The theme's --global-thead-color is a near-white "table header" tone that
+     every dark theme also sets to near-white, so using it as a surface made the
+     pill white-on-white in dark mode. Derive the tint from the text colour
+     instead: it stays light on light backgrounds and dark on dark ones. */
+  background-color: rgba(128, 128, 128, 0.14);
+  background-color: color-mix(in srgb, var(--global-text-color) 10%, var(--global-bg-color));
   padding: 3px 10px;
   border-radius: 6px;
   font-family: "SFMono-Regular", Consolas, Menlo, monospace;
@@ -182,7 +196,32 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   7. Responsive + print
+   7. Dark mode corrections
+   -------------------------------------------------------------------------- */
+/* <hr> uses --global-border-color, which the dark theme sets to #bdc1c4 — a
+   light grey that is far brighter than the surrounding #474747 page. Use the
+   same text-derived divider tone as the headings instead. */
+hr {
+  border-top-color: var(--divider-color);
+}
+
+/* --global-link-color is #52adc8 (2.57:1 on white) in light mode and #0ea1c5
+   (3.06:1 on #474747) in dark mode. Darken it slightly for light mode and
+   lighten it for dark mode so links reach at least ~4:1 against the page. */
+:root {
+  --global-link-color: #2f7f93;
+  --global-link-color-hover: #2a7183;
+  --global-link-color-visited: #4a9aa8;
+}
+
+html[data-theme="dark"] {
+  --global-link-color: #4ab9d4;
+  --global-link-color-hover: #63c6dd;
+  --global-link-color-visited: #8fd6e6;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive + print
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
   .news-container {
