@@ -13,4 +13,6 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<!-- The ?v= build stamp stops browsers from reusing a stale main.css: GitHub
+     Pages serves it with max-age=600 and the filename never changes. -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v={{ site.time | date: '%s' }}">
