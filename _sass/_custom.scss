@@ -261,6 +261,19 @@ html[data-theme="dark"] {
   --accent-color: #4ab9d4;
 }
 
+/* Drive the theme-toggle glyph from the theme state so the right icon is part
+   of the first paint: main.min.js can only swap the Font Awesome classes once
+   it has loaded, which briefly showed a sun on the dark theme. Font Awesome
+   solid codepoints: sun U+F185, moon U+F186. The #theme-icon rule outranks
+   .fa-sun/.fa-moon::before, so it also overrides the classes the script sets. */
+#theme-icon::before {
+  content: "\f185";
+}
+
+html[data-theme="dark"] #theme-icon::before {
+  content: "\f186";
+}
+
 /* The theme footer uses --global-text-color-light, which is #bdc1c4 in light
    mode — only 1.63:1 on the #f2f3f3 footer, i.e. effectively unreadable. It is
    fine in dark mode (8.37:1). Deriving the colour from the text colour at 80%

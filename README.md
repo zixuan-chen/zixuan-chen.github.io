@@ -84,6 +84,9 @@ needed.
   this repository only contains this site's content and configuration.
 - `_sass/_custom.scss` is imported last in `assets/css/main.scss` so its rules
   override the theme defaults.
+- The light/dark theme is resolved in `_includes/head/theme-init.html` before
+  the stylesheet loads, so the first paint already has the right palette;
+  `assets/js/main.min.js` only handles the toggle afterwards.
 - Social preview (`og:image`) comes from `images/og-image.png` via the
   `og_image` key in `_config.yml`.
 

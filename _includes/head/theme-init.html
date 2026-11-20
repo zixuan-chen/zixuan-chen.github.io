@@ -1,0 +1,62 @@
+<!-- Theme bootstrap
+     The dark palette only applies under html[data-theme="dark"], and that
+     attribute used to be set by main.min.js, which runs after the browser has
+     already painted the light theme. On dark-mode systems the page therefore
+     flashed white before turning dark. Resolve the theme here, before the
+     stylesheet is requested, so the first frame is already correct.
+     Keep this logic in sync with setTheme() in assets/js/_main.js. -->
+<meta name="theme-color" content="#ffffff">
+<script>
+  (function () {
+    var root = document.documentElement;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    var dark;
+
+    try {
+      var stored = localStorage.getItem("theme");
+      if (stored === "dark" || stored === "light") {
+        dark = stored === "dark";
+      }
+    } catch (e) {
+      /* localStorage can throw when site data is blocked. */
+    }
+
+    if (dark === undefined) {
+      // Respect a server-rendered site_theme before falling back to the OS.
+      dark = root.getAttribute("data-theme") === "dark" ||
+        (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+
+    if (dark) {
+      root.setAttribute("data-theme", "dark");
+    } else {
+      root.removeAttribute("data-theme");
+    }
+    if (meta) {
+      meta.setAttribute("content", dark ? "#474747" : "#ffffff");
+    }
+
+    // The masthead toggle (and the OS preference listener in main.min.js)
+    // changes data-theme later; keep the browser chrome colour in sync.
+    if (window.MutationObserver) {
+      new MutationObserver(function () {
+        var isDark = root.getAttribute("data-theme") === "dark";
+        if (meta) {
+          meta.setAttribute("content", isDark ? "#474747" : "#ffffff");
+        }
+      }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    }
+  })();
+</script>
+<style>
+  /* Give the canvas the theme background before main.css is loaded; otherwise
+     the browser paints a white page while the stylesheet is still in flight. */
+  html {
+    background-color: var(--global-bg-color, #ffffff);
+    color-scheme: light;
+  }
+  html[data-theme="dark"] {
+    background-color: var(--global-bg-color, #474747);
+    color-scheme: dark;
+  }
+</style>
