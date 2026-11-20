@@ -4,7 +4,11 @@
      already painted the light theme. On dark-mode systems the page therefore
      flashed white before turning dark. Resolve the theme here, before the
      stylesheet is requested, so the first frame is already correct.
-     Keep this logic in sync with setTheme() in assets/js/_main.js. -->
+     Keep this logic in sync with setTheme() in assets/js/_main.js.
+
+     NOTE: use /* */ comments only inside the script. The compress layout
+     strips line breaks in production, so a // comment would swallow all the
+     code that follows it. -->
 <meta name="theme-color" content="#ffffff">
 <script>
   (function () {
@@ -22,7 +26,7 @@
     }
 
     if (dark === undefined) {
-      // Respect a server-rendered site_theme before falling back to the OS.
+      /* Respect a server-rendered site_theme before falling back to the OS. */
       dark = root.getAttribute("data-theme") === "dark" ||
         (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
@@ -36,8 +40,8 @@
       meta.setAttribute("content", dark ? "#474747" : "#ffffff");
     }
 
-    // The masthead toggle (and the OS preference listener in main.min.js)
-    // changes data-theme later; keep the browser chrome colour in sync.
+    /* The masthead toggle (and the OS preference listener in main.min.js)
+       changes data-theme later; keep the browser chrome colour in sync. */
     if (window.MutationObserver) {
       new MutationObserver(function () {
         var isDark = root.getAttribute("data-theme") === "dark";
